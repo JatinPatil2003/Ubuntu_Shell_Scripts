@@ -50,6 +50,18 @@ rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext
 cd ~/ros2_humble/
 colcon build --symlink-install
 
+cd 
+
+mkdir colcon_ws
+cd colcon_ws
+mkdir src
+
+colcon build --symlink-install
+
+echo "source ~/colcon_ws/install/setup.bash" >> ~/.bashrc
+echo "source ~/ros2_humble/install/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
 echo "------------------------------"
 echo "Installed ROS 2 HUMBLE        "
 echo "------------------------------"
